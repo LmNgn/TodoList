@@ -15,17 +15,32 @@ const TodoDetail = ({ todo, index }) => {
       <td className="p-3 handwritten text-lg font-semibold">{todo.name}</td>
       <td className="p-3 handwritten text-lg">{todo.description}</td>
       <td className="p-3">
-        <span
-          className={`inline-block px-3 py-1 rounded-full note-shadow-sm handwritten text-lg ${
-            todo.priority.value === "high"
+        {(() => {
+          const map = { 1: "Thấp", 2: "Vừa", 3: "Cao" };
+          const level =
+            typeof todo.priority === "object"
+              ? todo.priority.level
+              : todo.priority;
+          const label =
+            typeof todo.priority === "object"
+              ? todo.priority.label
+              : map[level] || "Không rõ";
+
+          const color =
+            level === 3
               ? "bg-[#fecaca] text-red-800"
-              : todo.priority.value === "medium"
+              : level === 2
               ? "bg-[#fed7aa] text-orange-800"
-              : "bg-[#d1fae5] text-green-800"
-          }`}
-        >
-          {todo.priority.label}
-        </span>
+              : "bg-[#d1fae5] text-green-800";
+
+          return (
+            <span
+              className={`inline-block px-3 py-1 rounded-full note-shadow-sm handwritten text-lg ${color}`}
+            >
+              {label}
+            </span>
+          );
+        })()}
       </td>
       <td className="p-3 handwritten text-lg">{formatDate(todo.dueDate)}</td>
       <td className="p-3 handwritten text-lg">{formatDate(todo.updatedAt)}</td>

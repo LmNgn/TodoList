@@ -36,9 +36,9 @@ const TodoFilter = ({ query, onChange }) => {
           className="px-4 py-2 bg-white border-2 border-foreground rounded note-shadow-sm handwritten text-lg cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary"
         >
           <option value="">Mức độ ưu tiên</option>
-          <option value="high">Cao</option>
-          <option value="medium">Vừa</option>
-          <option value="low">Thấp</option>
+          <option value="3">Cao</option>
+          <option value="2">Vừa</option>
+          <option value="1">Thấp</option>
         </select>
 
         <select

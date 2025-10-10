@@ -29,7 +29,6 @@ const TodoList = () => {
       console.log(error);
     }
   };
-  console.log(todos);
   const fetchAll = async () => {
     try {
       await fetch(`${URL}`)
