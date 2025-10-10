@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+.handwritten {
+  font-family: "Patrick Hand", cursive;
+  font-weight: 400;
+}
