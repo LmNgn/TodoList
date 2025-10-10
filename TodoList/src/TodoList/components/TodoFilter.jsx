@@ -3,7 +3,7 @@ import toast from "react-hot-toast";
 
 const TodoFilter = ({ query, onChange }) => {
   const [priority, setPriority] = useState(query.priority || "");
-  const [status, setStatus] = useState(query.status || "");
+  const [status, setStatus] = useState(query.completed || "");
   const [fromDate, setFromDate] = useState(query.from || "");
   const [toDate, setToDate] = useState(query.to || "");
 
@@ -16,7 +16,7 @@ const TodoFilter = ({ query, onChange }) => {
     onChange({
       ...query,
       priority,
-      status,
+      completed: status,
       createdAt_gte: fromDate,
       createdAt_lte: toDate,
       dueDate_gte: fromDate,
@@ -47,8 +47,8 @@ const TodoFilter = ({ query, onChange }) => {
           className="px-4 py-2 bg-white border-2 border-foreground rounded note-shadow-sm handwritten text-lg cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary"
         >
           <option value="">Trạng thái</option>
-          <option value="completed">Đã hoàn thành</option>
-          <option value="pending">Chưa hoàn thành</option>
+          <option value="true">Đã hoàn thành</option>
+          <option value="false">Chưa hoàn thành</option>
         </select>
       </div>
 
