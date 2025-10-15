@@ -1,6 +1,8 @@
+import { useNavigate } from "react-router-dom";
 import { formatDate } from "../../utils";
-
+import { Eye, Trash2 } from "lucide-react";
 const TodoDetail = ({ todo, index }) => {
+  const nav = useNavigate();
   return (
     <tr className="border-b border-[#d6d3d1] hover:bg-[#fef9e7] transition-colors">
       <td className="p-3">
@@ -46,11 +48,14 @@ const TodoDetail = ({ todo, index }) => {
       <td className="p-3 handwritten text-lg">{formatDate(todo.updatedAt)}</td>
       <td className="p-3">
         <div className="flex gap-2">
-          <button className="bg-[#dbeafe] hover:bg-[#bfdbfe] px-4 py-2 rounded note-shadow-sm handwritten text-lg transition-colors">
-            Cập nhật
+          <button
+            onClick={() => nav(`/todos/${todo._id}`)}
+            className="bg-[#dbeafe] hover:bg-[#bfdbfe] px-4 py-2 rounded note-shadow-sm handwritten text-lg transition-colors cursor-pointer"
+          >
+            <Eye />
           </button>
-          <button className="bg-[#fecaca] hover:bg-[#fca5a5] px-4 py-2 rounded note-shadow-sm handwritten text-lg transition-colors">
-            Xoá
+          <button className="bg-[#fecaca] hover:bg-[#fca5a5] px-4 py-2 rounded note-shadow-sm handwritten text-lg transition-colors cursor-pointer">
+            <Trash2 />
           </button>
         </div>
       </td>

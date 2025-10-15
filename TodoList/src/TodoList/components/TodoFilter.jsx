@@ -6,7 +6,7 @@ const TodoFilter = ({ query, onChange }) => {
   const [status, setStatus] = useState(query.completed || "");
   const [fromDate, setFromDate] = useState(query.from || "");
   const [toDate, setToDate] = useState(query.to || "");
-
+  const isFiltered = priority || status || fromDate || toDate;
   const handleSubmit = (e) => {
     e.preventDefault();
     if (fromDate && toDate && new Date(toDate) < new Date(fromDate)) {
@@ -24,7 +24,22 @@ const TodoFilter = ({ query, onChange }) => {
       _page: 1,
     });
   };
-
+  const handleReset = () => {
+    setPriority("");
+    setStatus("");
+    setFromDate("");
+    setToDate("");
+    onChange({
+      ...query,
+      priority: "",
+      completed: "",
+      createdAt_gte: "",
+      createdAt_lte: "",
+      dueDate_gte: "",
+      dueDate_lte: "",
+      _page: 1,
+    });
+  };
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <h3 className="text-2xl handwritten font-bold mb-4">🎯 Lọc công việc</h3>
@@ -74,12 +89,23 @@ const TodoFilter = ({ query, onChange }) => {
         </div>
       </div>
 
-      <button
-        type="submit"
-        className="bg-accent hover:bg-primary text-accent-foreground px-6 py-2 rounded note-shadow handwritten text-lg font-bold transition-colors"
-      >
-        Áp dụng lọc
-      </button>
+      <div className="flex gap-2">
+        <button
+          type="submit"
+          className="bg-accent hover:bg-primary text-accent-foreground px-6 py-2 rounded note-shadow handwritten text-lg font-bold transition-colors cursor-pointer"
+        >
+          Áp dụng lọc
+        </button>
+        {isFiltered && (
+          <button
+            type="button"
+            onClick={handleReset}
+            className="bg-[#fce7f3] hover:bg-primary text-accent-foreground px-6 py-2 rounded note-shadow handwritten text-lg font-bold transition-colors cursor-pointer"
+          >
+            Reset Filter
+          </button>
+        )}
+      </div>
     </form>
   );
 };

@@ -4,3 +4,11 @@
   font-family: "Patrick Hand", cursive;
   font-weight: 400;
 }
+
+.note-shadow {
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), 4px 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.note-shadow-sm {
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+}

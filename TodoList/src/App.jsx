@@ -1,11 +1,11 @@
 import { Toaster } from "react-hot-toast";
 import "./App.css";
-import TodoList from "./TodoList/TodoList";
+import AppRouter from "./routes";
 
 function App() {
   return (
-    <div className="min-h-screen p-4 md:p-8">
-      <TodoList />
+    <div>
+      <AppRouter />
       <Toaster />
     </div>
   );
