@@ -1,7 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import NotFound from "../pages/NotFound";
-import CommonRoutes from "./CommonRoute";
-
+import CommonRoutes from "./CommonRoutes";
 let router = createBrowserRouter([
   ...CommonRoutes,
   { path: "*", Component: NotFound },
