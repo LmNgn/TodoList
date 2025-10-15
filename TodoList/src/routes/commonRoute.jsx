@@ -4,7 +4,7 @@ import TodoList from "../TodoList/TodoList";
 import TodoDetail from "../TodoList/TodoDetail";
 import HighPriorityTodos from "../TodoList/HighPriorityTodos";
 
-const commonRoutes = [
+const CommonRoutes = [
   {
     path: "/",
     Component: CommonLayout,
@@ -16,4 +16,4 @@ const commonRoutes = [
     ],
   },
 ];
-export default commonRoutes;
+export default CommonRoutes;
