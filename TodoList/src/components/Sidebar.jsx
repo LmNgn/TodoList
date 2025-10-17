@@ -4,6 +4,7 @@ const Sidebar = () => {
   const links = [
     { href: "/", label: "Todo" },
     { href: "/important", label: "Important todo" },
+    { href: "/todo", label: "Add todo" },
   ];
   return (
     <aside className="w-64 bg-amber-100 min-h-screen p-6 border-r-2 border-amber-200">

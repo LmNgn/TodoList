@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { formatDate } from "../../utils";
-import { Eye, Trash2 } from "lucide-react";
+import { Cog, Eye, Trash2 } from "lucide-react";
 const TodoDetail = ({ todo, index }) => {
   const nav = useNavigate();
   return (
@@ -53,6 +53,12 @@ const TodoDetail = ({ todo, index }) => {
             className="bg-[#dbeafe] hover:bg-[#bfdbfe] px-4 py-2 rounded note-shadow-sm handwritten text-lg transition-colors cursor-pointer"
           >
             <Eye />
+          </button>
+          <button
+            onClick={() => nav(`/todo/${todo._id}`)}
+            className="bg-[#dbeafe] hover:bg-[#bfdbfe] px-4 py-2 rounded note-shadow-sm handwritten text-lg transition-colors cursor-pointer"
+          >
+            <Cog />
           </button>
           <button className="bg-[#fecaca] hover:bg-[#fca5a5] px-4 py-2 rounded note-shadow-sm handwritten text-lg transition-colors cursor-pointer">
             <Trash2 />

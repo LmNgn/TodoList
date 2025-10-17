@@ -4,6 +4,8 @@ import TodoList from "../TodoList/TodoList";
 import TodoDetail from "../TodoList/TodoDetail";
 import HighPriorityTodos from "../TodoList/HighPriorityTodos";
 
+import TodoForm from "../TodoList/TodoForm";
+
 const CommonRoutes = [
   {
     path: "/",
@@ -13,6 +15,8 @@ const CommonRoutes = [
       { path: "todos", Component: TodoList },
       { path: "todos/:id", Component: TodoDetail },
       { path: "important", Component: HighPriorityTodos },
+      { path: "todo", Component: TodoForm },
+      { path: "todo/:id", Component: TodoForm },
     ],
   },
 ];
