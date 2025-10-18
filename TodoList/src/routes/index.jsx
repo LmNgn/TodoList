@@ -3,7 +3,7 @@ import NotFound from "../pages/NotFound";
 import CommonRoutes from "./CommonRoutes";
 let router = createBrowserRouter([
   ...CommonRoutes,
-  { path: "*", Component: NotFound },
+  { path: "*", element: <NotFound /> },
 ]);
 
 const AppRouter = () => {

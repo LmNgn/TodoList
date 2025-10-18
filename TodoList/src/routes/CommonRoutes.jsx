@@ -3,21 +3,21 @@ import CommonLayout from "../components/CommonLayout";
 import TodoList from "../TodoList/TodoList";
 import TodoDetail from "../TodoList/TodoDetail";
 import HighPriorityTodos from "../TodoList/HighPriorityTodos";
-
 import TodoForm from "../TodoList/TodoForm";
 
 const CommonRoutes = [
   {
     path: "/",
-    Component: CommonLayout,
+    element: <CommonLayout />, // ✅ dùng element thay vì Component
     children: [
-      { index: true, element: <Navigate to={"/todos"} /> },
-      { path: "todos", Component: TodoList },
-      { path: "todos/:id", Component: TodoDetail },
-      { path: "important", Component: HighPriorityTodos },
-      { path: "todo", Component: TodoForm },
-      { path: "todo/:id", Component: TodoForm },
+      { index: true, element: <Navigate to="/todos" /> },
+      { path: "todos", element: <TodoList /> },
+      { path: "todos/:id", element: <TodoDetail /> },
+      { path: "important", element: <HighPriorityTodos /> },
+      { path: "todo", element: <TodoForm /> },
+      { path: "todo/:id", element: <TodoForm /> },
     ],
   },
 ];
+
 export default CommonRoutes;
