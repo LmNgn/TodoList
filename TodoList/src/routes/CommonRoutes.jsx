@@ -8,7 +8,7 @@ import TodoForm from "../TodoList/TodoForm";
 const CommonRoutes = [
   {
     path: "/",
-    element: <CommonLayout />, // ✅ dùng element thay vì Component
+    element: <CommonLayout />,
     children: [
       { index: true, element: <Navigate to="/todos" /> },
       { path: "todos", element: <TodoList /> },
