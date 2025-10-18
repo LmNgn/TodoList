@@ -10,15 +10,6 @@
       "config": {}
     }
   ],
-  "routes": [
-    {
-      "handle": "filesystem"
-    },
-    {
-      "src": "/.*",
-      "dest": "/index.html"
-    }
-  ],
   "outputDirectory": "dist",
   "scripts": {
     "dev": "vite",
