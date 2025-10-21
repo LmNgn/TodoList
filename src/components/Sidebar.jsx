@@ -13,7 +13,7 @@ const Sidebar = () => {
   };
 
   const links = [
-    { href: "/", label: "Todo" },
+    { href: "/todos", label: "Todo" },
     { href: "/important", label: "Important todo" },
     { href: "/todo", label: "Add todo" },
   ];
